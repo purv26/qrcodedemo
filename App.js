@@ -1,20 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import RazorpayCheckout from 'react-native-razorpay';
+import React,{useState} from 'react';
+import { StyleSheet, Text, View ,Button,Image,SafeAreaView} from 'react-native';
+
+export default function App(){
+    const [show_Visible,setShowVisible] = useState(false);
+    const showqr = () => {
+      setShowVisible(!show_Visible)
+    }
+    return(
+      <View style={styleSheet.MainContainer}>
+       <Text style={StyleSheet.text}></Text>
+      {
+      show_Visible ? 
+      <Image source={require('C:/Users/hi/code/assets/PhonePeQR_7798130209.png')}
+      style={{width:350,height:650,resizeMode:'contain'}}/> :null
+      }
+      <Button title="UPI"  onPress = { () => {showqr()}}/>
+      </View>
+    )
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+const styleSheet=StyleSheet.create({
+    MainContainer :{
+        flex:1,
+        padding:20,
+        justifyContent:'center'
+    },
+    text:{
+      fontSize:10,
+      color:'gray',
+    }
 });
+
+
+
+
