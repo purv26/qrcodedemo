@@ -1,5 +1,4 @@
 
-import RazorpayCheckout from 'react-native-razorpay';
 import React,{useState} from 'react';
 import { StyleSheet, Text, View ,Button,Image,SafeAreaView} from 'react-native';
 
